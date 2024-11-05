@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <link rel="stylesheet" href="{%static "reviews/review.css" %}">
     <title>Your Review</title>
     {% comment %} <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="images/favicon.png" /> {% endcomment %}
@@ -13,7 +14,11 @@
   <body>
     <form id="review_form" method="POST">
       {% csrf_token %}
-      {{ form }}
+      <div class="form-control {% if form.username.errors %} errors {% endif %}">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.username.errors }}
+      </div>
       {% comment %} <label for="username">Your name</label>
       <input id="username" name="username" type="text"> {% endcomment %}
       <button type="submit">Send</button>
