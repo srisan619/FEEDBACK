@@ -14,11 +14,13 @@
   <body>
     <form id="review_form" method="POST">
       {% csrf_token %}
-      <div class="form-control {% if form.username.errors %} errors {% endif %}">
-        {{ form.username.label_tag }}
-        {{ form.username }}
-        {{ form.username.errors }}
-      </div>
+      {% for field in form  %}
+        <div class="form-control {% if field.errors %} errors {% endif %}">
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}
+        </div>      
+      {% endfor %}
       {% comment %} <label for="username">Your name</label>
       <input id="username" name="username" type="text"> {% endcomment %}
       <button type="submit">Send</button>

@@ -10,7 +10,7 @@ form{
     border-radius: 12px;
     padding: 1rem;
     background-color: white;
-    box-shadow: 0 2px 8px rgb(0,0,0.26);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 button{
@@ -39,9 +39,9 @@ button:active{
 }
 
 .form-control input:focus{
-    background-color: rgb(81, 6, 128);
-    border-color: rgb(207, 161, 235);
+    border-color: #1f0050;
     outline: none;
+    background-color: #f4eeff;
 }
 
 .form-control label{
