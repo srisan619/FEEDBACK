@@ -13,8 +13,9 @@
   <body>
     <form id="review_form" method="POST">
       {% csrf_token %}
-      <label for="username">Your name</label>
-      <input id="username" name="username" type="text">
+      {{ form }}
+      {% comment %} <label for="username">Your name</label>
+      <input id="username" name="username" type="text"> {% endcomment %}
       <button type="submit">Send</button>
     </form>
   </body>
