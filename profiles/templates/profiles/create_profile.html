@@ -1,0 +1,11 @@
+{% extends "profiles/base.html" %}
+
+{% block title %}Create a profile{% endblock  %}
+{% block content %}
+    {% comment %} enctype is used for inform file request is sent to the server {% endcomment %}
+    <form id="profile_form" action="/profiles" method="POST" enctype="multipart/form-data">
+        <input type="file">
+            <button>Upload!</button>
+        </input>
+    </form>
+{% endblock  %}
