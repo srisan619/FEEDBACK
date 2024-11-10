@@ -7,5 +7,6 @@ urlpatterns = [
     # path("thank-you", views.thank_you)
     path("thank-you", views.ThanksView.as_view()),
     path("reviews", views.ReviewListView.as_view()),
+    path("reviews/favorite", views.AddFavoriteView.as_view()),
     path("reviews/<int:pk>", views.ShowReviewView.as_view())
 ]
